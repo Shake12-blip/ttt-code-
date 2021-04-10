@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int printdivider(void);
+int printBoard(void);
+FILE*fileptr;
+char string[5];
+int main() {
+  printBoard();
+  printdivider();
+
+  do {
+    char string[5];
+   FILE*fileptr;
+
+   fileptr = fopen("ttt.txt", "r+");
+   if (fileptr == NULL) {
+       printf("Unable to open file\n");
+       return 1;
+   }
+   fgets(string, 20, fileptr) != NULL; {
+           fprintf( "%s", string);
+        }
+
+
+   fclose(fileptr);
+ } while (fgets (string, 20, fileptr)!=NULL);
+
+    return 0;
+}
+
+ int printdivider(){ // prints the divider between each board
+
+  for (int i=0; i<6; i++) { //3
+           printf ("-");
+       }
+       printf("\n");
+   printf("\n");
+   return 0;
+   }
+
+int printBoard(){ // prints the tic tac toe board
+   int array[3][3];
+       for (int i=0; i<3; i++) { //i=0, i=1, i=2
+           for (int j=0; j<3; j++) {
+               array[i][j] = '.';
+           }
+       }
+
+       for (int i=0; i<3; i++) { //i=0, i=1, i=2
+           for (int j=0; j<3; j++) {
+               printf("%c ", array[i][j]);
+           }
+           printf("\n");
+       }
+       return 0;
+     }
